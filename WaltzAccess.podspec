@@ -16,18 +16,17 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WaltzAccess"
-  s.version      = "0.0.1"
-  s.summary      = "A short description of WaltzAccess."
+  s.version      = "0.0.2"
+  s.summary      = "WaltzAccess"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "WaltzAccess SDK to open door"
 
-  s.homepage     = "http://EXAMPLE/WaltzAccess"
+  s.homepage     = "http://waltzapp.com/"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -64,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "9.3"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -79,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/WaltzApp/WaltzAccess", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/WaltzApp/WaltzAccess.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,8 +89,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "WREFramework.bundle", "WREFramework.framework"
-  s.exclude_files = "Classes/Exclude"
+  s.vendored_frameworks = "WREFramework.framework"
+  s.resources = 'WREFramework.bundle'
+  # s.source_files  = "WREFramework"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -130,7 +131,14 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   # s.requires_arc = true
+ # other_ldflags = '$(inherited) -framework ' + ' -lz -lstdc++'
+ # s.xcconfig     = { 
 
+ #   'OTHER_LDFLAGS[arch=arm64]'  => other_ldflags,
+ #   'OTHER_LDFLAGS[arch=armv7]'  => other_ldflags,
+ #   'OTHER_LDFLAGS[arch=armv7s]' => other_ldflags
+ # }
+  #s.xcconfig = { 'ARCHS' => 'armv7 armv7s arm64', 'VALID_ARCHS' => 'armv7 armv7s arm64' }
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
