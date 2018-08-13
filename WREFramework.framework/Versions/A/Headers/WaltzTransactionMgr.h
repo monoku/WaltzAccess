@@ -17,7 +17,6 @@
 
 + (WaltzTransactionMgr *_Nonnull) sharedManager;
 - (void) beginTransactionWithLicenseKey:(nonnull NSString *)licenseKey;
-- (void) beginTransactionWithLicenseKey:(NSString *_Nonnull)licenseKey withJWT:(NSString* _Nonnull) jwt;
 @property (weak,nonatomic,nullable) id <WltzTransactionMgrDelegate> delegate;
 
 @end
